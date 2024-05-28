@@ -12,15 +12,9 @@ class ReserveController extends Controller
 {
     public $date;
 
-    
-
-    
+    //Actualizar reserva
 
     public function update($date){
-        
-
-        //$classes = booking::where('date',$date)->get();
-
 
         return view('class.reserve', compact('classes'));
     }

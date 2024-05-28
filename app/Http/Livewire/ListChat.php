@@ -19,12 +19,7 @@ class ListChat extends Component
 
     public function mount(){
 
-        
-
         $messages = [];
-
-       
-        
         
     }
 
@@ -51,8 +46,6 @@ class ListChat extends Component
         return view('livewire.list-chat')
         -> with('dataPost',$this->dataPost)
         -> with('nameUsers',$this->nameUsers);
-
-        //return view('livewire.list-chat');
     }
 
     public function deletePost($idPost){
@@ -64,18 +57,6 @@ class ListChat extends Component
         return redirect()->route('chat');
     }
 
-    public function load(){
-
-       /* $dataPost = chatpost::select(['user','date','post'])->get();
-        $dataPost->user = user::select(['name'])->where('id',$dataPost->user);
-        var_dump($dataPost->user);
-        
-        foreach ($dataPost as $data => $value) {
-            array_push($this->messages,$value->post);
-        }
-        //return view('chat.chat', compact('messages'));
-        return view('chat.chat')-> with('messages',$this->messages);*/
-    }
 
     
 }

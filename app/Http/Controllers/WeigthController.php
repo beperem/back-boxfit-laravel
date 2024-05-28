@@ -12,6 +12,8 @@ class WeigthController extends Controller
 
     public $weigth = [];
 
+    //Mostrar los benchmarks de tipo peso
+
     public function show(){
 
         $this->weigth = Benchmark::where('type',1)->get();

@@ -7,7 +7,7 @@ use App\Models\Benchmark;
 
 class ChallengeController extends Controller
 {
-    //
+    //Mostrar Benchmark de tipo challenges
 
     public $challenges = [];
 

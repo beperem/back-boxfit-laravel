@@ -30,7 +30,6 @@ class Chat extends Component
     public function sendMessage(){
 
         $this->validate([
-            //"name" => "required",
             "message" => "required"
         ]);
 
@@ -40,12 +39,12 @@ class Chat extends Component
             "message" => $this->message
         ];
 
-        //$this->emit("receipt", $dataSend);
 
         event(new \App\Events\sendMessage(Auth::user()->id,Carbon::now(),$this->message));
         
         
-        //Save post db
+        //Guardar post en la base de datos
+        
         chatpost::create([
             'user' => Auth::user()->id,
             'date' => Carbon::now(),

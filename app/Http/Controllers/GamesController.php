@@ -7,7 +7,7 @@ use App\Models\Benchmark;
 
 class GamesController extends Controller
 {
-    //
+    //Mostrar Benchmarks de tipo games
 
     public $games = [];
 

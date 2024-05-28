@@ -7,6 +7,8 @@ use Livewire\Component;
 class DeleteClass extends Component
 {
 
+    //Mostrar clases disponibles
+
     public function showClass(){
 
         $classes = booking::all();

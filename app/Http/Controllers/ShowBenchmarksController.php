@@ -14,6 +14,8 @@ class ShowBenchmarksController extends Controller
     public $data = [];
     public $exercise;
 
+    //Mostrar Benchmarks
+
     public function show($benchmark){
 
         $this->data = UserBenchmarks::where('user',Auth::user()->id)
@@ -36,6 +38,8 @@ class ShowBenchmarksController extends Controller
                 ->with('exercise', $this->exercise);                                    
 
     }
+
+    //Añadir nuevo registro de benchmark
 
     public function newBenchmark(Request $request){
 

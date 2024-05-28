@@ -16,7 +16,6 @@ class ReserveClass extends Component
     public $numClassReserved;
     public $idClass;
     public $numAlumClass = [];
-    //public $isFull = false;
     public $alumInClass = [];
     public $isFull = [];
     public $alum = [];
@@ -25,7 +24,7 @@ class ReserveClass extends Component
 
 
 
-
+    //Crea una reserva de clase
 
     public function reserve($idClass){
 
@@ -35,33 +34,10 @@ class ReserveClass extends Component
             'user' => Auth::user()->id,
         ]);
 
-        /*//Numero de alumnos de una clase
-        $alumnClass = booking::select('alumn')->where('id',$idClass)->get();
-
-        //dd($alumnClass[0]->alumn);
-
-        $this->idClass = $idClass;
-
-        $classReserved = UserBooking::where('class',$idClass)->get();
-
-        $this->numClassReserved = $classReserved->count();
-
-        if($alumnClass[0]->alumn <= $this->numClassReserved){
-            //dd($this->isFull);
-            $this->isFull[$idClass] = true;
-        }
-
-        //return redirect()->route('reserve')->with('message','Clase reservada')->with('date',$this->date)->with('numClass',$this->numClassReserved);
-        /*return view('livewire.reserve-class')
-            ->with('date',$this->date)
-            ->with('numClassReserved',$this->numClassReserved)
-            ->with('idClass',$this->idClass)
-            ->with('isFull',$this->isFull);
-            */
-
             return redirect()->route('reserve');
-            //return view('livewire.reserve-class');
     }
+
+    //Borra una reserva de clase
 
     public function delete($idClass){
 
@@ -75,6 +51,7 @@ class ReserveClass extends Component
     }
 
 
+    //Muestra las clases dadas de alta y su disponibilidad
 
     public function showClass(){
 
@@ -113,10 +90,7 @@ class ReserveClass extends Component
             else
                 array_push($this->alumInClass,false);
             
-                /*if(UserBooking::where('user',Auth::user()->id)->get() )
-                    array_push($this->alumInClass,true);
-                else
-                    array_push($this->alumInClass,false);    */
+               
             
 
             array_push($this->numAlumClass,$this->numClassReserved);
@@ -129,11 +103,6 @@ class ReserveClass extends Component
             }
         }
         
-       
-
-       
-        
-
         return view('livewire.reserve-class')
             ->with('classes',$this->classes)
             ->with('numClassReserved',$this->numClassReserved)

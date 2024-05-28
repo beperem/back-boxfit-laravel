@@ -8,6 +8,8 @@ class contactoController extends Controller
 {
     
 
+    //Contacto
+    
     public function contact(Request $request){
 
         Mail::to($receivers)->send(new EmergencyCallReceived($call));

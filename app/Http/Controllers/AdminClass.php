@@ -8,6 +8,8 @@ class AdminClass extends Controller
 {
     public $classes = [];
 
+    //Añadir clase
+
     public function addClass(Request $request){
 
         booking::create([

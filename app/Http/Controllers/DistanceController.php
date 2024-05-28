@@ -7,7 +7,7 @@ use App\Models\Benchmark;
 
 class DistanceController extends Controller
 {
-    //
+    //Mostrar benchmarks de tipo distancia
 
     public $distances = [];
 
